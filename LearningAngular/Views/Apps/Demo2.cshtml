@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo2</title>
+</head>
+<body ng-app="app">
+    <div ng-controller="ControllerA">
+        <p>{{vm.name}}</p>
+        <input ng-model="vm.name"/> 
+        <div ng-controller="ControllerB">
+            <p>{{vmb.name}}</p>
+            <input ng-model="vmb.name" /> 
+            <div ng-controller="ControllerC">
+                <p>{{vm.name}}</p>
+                <input ng-model="vm.name" />
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script>
+        (function() {
+            angular.module("app", [])
+                .controller("ControllerA", function($scope) {
+                    $scope.vm = {
+                        name: ""
+                    };
+                })
+                .controller("ControllerB", function($scope) {
+                    $scope.vmb = {
+                        name: "Hello"
+                    };
+
+                })
+                .controller("ControllerC", function($scope) {});
+        })();
+    </script>
+</body>
+</html>

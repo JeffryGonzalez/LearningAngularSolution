@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+    <div class="container">
+        <header class="page-header">
+            <h1>Employee Mentoring <small>Matching Employees with Mentors!</small></h1>
+        </header> 
+        <div class="col-md-3">
+            <div ui-view="nav"></div>
+        </div>
+        <div class="col-md-9">
+            <div class="row" ui-view="header">
+               
+            </div>
+            <div class="row" ui-view="content">
+            </div>
+            <div class="row" ui-view="footer">
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui-router.js"></script>
+
+    <script src="~/src/mentoring/app.module.js"></script>
+    <script src="~/src/mentoring/infrastructure/infrascture.module.js"></script>
+
+    <script src="~/src/mentoring/dashboard/dashboard.module.js"></script>
+    <script src="~/src/mentoring/dashboard/config.routes.js"></script>
+    
+    <script src="~/src/mentoring/mentors/mentors.module.js"></script>
+    <script src="~/src/mentoring/mentors/config.routes.js"></script>
+    
+    <script src="~/src/mentoring/students/students.module.js"></script>
+
+    <script src="~/src/mentoring/students/config.routes.js"></script>
+</body>
+</html>

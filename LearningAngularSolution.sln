@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningAngular", "LearningAngular\LearningAngular.csproj", "{8BAD81EC-5D21-4F5A-88A2-47B6AD01ABFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BAD81EC-5D21-4F5A-88A2-47B6AD01ABFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BAD81EC-5D21-4F5A-88A2-47B6AD01ABFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BAD81EC-5D21-4F5A-88A2-47B6AD01ABFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BAD81EC-5D21-4F5A-88A2-47B6AD01ABFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

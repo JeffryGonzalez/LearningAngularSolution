@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo3</title>
+</head>
+<body>
+    <div ng-app="app">
+
+        <div ng-controller="ControllerA as ca">
+            <input ng-model="ca.num" />
+            <input type="button" value="add to total" ng-click="ca.add(ca.num)" />
+        </div>
+        <div ng-controller="ControllerA as ca">
+            <input ng-model="ca.num" />
+            <input type="button" value="add to total" ng-click="ca.add(ca.num)" />
+        </div>
+        <div ng-controller="ControllerA as ca">
+            <input ng-model="ca.num" />
+            <input type="button" value="add to total" ng-click="ca.add(ca.num)" />
+        </div>
+        <div ng-controller="ControllerA as ca">
+            <input ng-model="ca.num" />
+            <input type="button" value="add to total" ng-click="ca.add(ca.num)" />
+        </div>
+        <div ng-controller="ControllerA as ca">
+            <input ng-model="ca.num" />
+            <input type="button" value="add to total" ng-click="ca.add(ca.num)" />
+        </div>
+        <div ng-controller="ControllerB as cb">
+            <h1>Total {{cb.total}}</h1>
+            <input type="button" value="get total" ng-click="cb.getTotal()" />
+        </div>
+    </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script>
+        (function () {
+            angular.module("app", [])
+                .controller("ControllerA", function (accumulator) {
+                    var vm = this;
+                    vm.add = function(x) {
+                        accumulator.addNumber(x);
+                        vm.num = "";
+                    };
+                })
+                .controller("ControllerB", function (accumulator) {
+                    var vm = this;
+                    vm.total = 0;
+                    vm.getTotal = function() {
+                        vm.total =  accumulator.getNumber();
+                    };
+                })
+                .factory("accumulator", function () {
+                    var _total = 0;
+                    var service = {
+                        addNumber: function (num) {
+                            _total += parseFloat(num);
+                        },
+                        getNumber: function () {
+                            return _total;
+                        }
+                    };
+                    return service;
+                    
+
+                });
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo</title>
+</head>
+<body ng-app="app">
+    <div ng-controller="NameFormatter as nf">
+        <h1>{{nf.greeting}}</h1>
+        <h1>{{nf.lastName}}, {{nf.firstName}}</h1>
+        <div>First Name <input type="text" ng-model="nf.firstName" /></div>
+        <div>Last Name <input type="text" ng-model="nf.lastName" /></div>
+        <div>
+            <input type="button" value="Send Greeting" ng-click="nf.sendGreeting()" />
+        </div>
+        <ul>
+            <li ng-repeat="message in nf.greetings track by $index">{{message}}</li>
+        </ul>
+    </div>
+    <script src="~/Scripts/angular.js"></script>
+   @Scripts.Render("~/bundles/greeter")
+</body>
+</html>
