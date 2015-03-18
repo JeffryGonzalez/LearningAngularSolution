@@ -1,0 +1,36 @@
+﻿<form ng-submit="vm.add(vm.newMentor)" name="theForm">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input class="form-control" name="firstName" ng-model="vm.newMentor.firstName" required/>
+        <div class="alert alert-danger" ng-messages="theForm.firstName.$error" ng-if="theForm.firstName.$invalid && theForm.firstName.$touched">
+            <div ng-message="required">We need a first Name</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input class="form-control" name="lastName" ng-model="vm.newMentor.lastName"  required/>
+        <div class="alert alert-danger"  ng-messages="theForm.lastName.$error" ng-if="theForm.lastName.$invalid && theForm.lastName.$touched">
+            <div ng-message="required">We need a last name</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input class="form-control" name="email" type="email" ng-model="vm.newMentor.email" required 
+               ng-maxlength="30" ng-minlength="5" />
+        
+        <div class="alert alert-danger" ng-messages="theForm.email.$error" ng-if="theForm.email.$touched && theForm.email.$invalid">
+            <h3>There were some errors:</h3>
+            <div ng-message="required">We need an email address</div>
+            <div ng-message="email">That doesn't look like an email address!</div>
+            <div ng-message="maxlength">That email address is too darned long!</div>
+            <div ng-message="minlength">That email address is too darned short!</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="available">Available for Students?
+            <input name="available" type="checkbox" ng-model="vm.newMentor.available" />
+        </label>
+       
+    </div>
+    <input type="submit" value="Add Mentor" class="btn btn-lg btn-success" ng-disabled="!theForm.$valid"/>
+</form>

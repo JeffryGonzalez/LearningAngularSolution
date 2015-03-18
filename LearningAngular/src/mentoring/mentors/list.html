@@ -1,0 +1,25 @@
+﻿<div>
+    <div class="row">
+        <div class="col-md-2">
+            <input ng-model="q"/>
+        </div>
+    </div>
+    <ul class="list-unstyled">
+        <li class="alert alert-info" ng-repeat="mentor in vm.list | filter: {lastName: q || ''}">
+            <h3>{{mentor.fullName}}</h3>
+            <p>
+                {{mentor.firstName}} is a mentor. {{mentor.firstName}}
+                
+                is <em ng-if="!mentor.takingNewStudents">not</em> accepting new students.
+            </p>
+            <p>{{mentor.fullName}} currently has 
+                <ng-pluralize count="mentor.studentCount" when="{'0' : 'no students.', '1' : 'one student.', 'other': '{} students'}">
+                    
+                </ng-pluralize>    
+            </p>
+            <p><a ui-sref="default.mentors.show({id: mentor.id})" class="btn btn-xs btn-success"  >details</a></p>
+        </li>
+
+    </ul>
+</div>
+

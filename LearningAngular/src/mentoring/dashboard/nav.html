@@ -1,5 +1,14 @@
-﻿<ul class="list-unstyled">
-    <li><a ui-sref="default">Home</a></li>
-    <li><a ui-sref="default.mentors">Mentors</a></li>
-    <li><a ui-sref="default.students">Students</a></li>
-</ul>
+﻿<nav>
+	<ul class="list-unstyled">
+
+		<li ui-sref-active="active-link" ><a ui-sref="default">Home</a></li>
+
+		<li ui-sref-active="active-link" ><a ui-sref="default.mentors">Mentors</a></li>
+		<li>
+			<ul class="list-unstyled">
+				<li ui-sref-active="active-link" ><a ui-sref="default.mentors.new">New</a></li>
+			</ul>
+		</li>
+		<li ui-sref-active="active-link"><a ui-sref="default.students">Students</a></li>
+	</ul>
+</nav>

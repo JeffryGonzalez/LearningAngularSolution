@@ -8,10 +8,21 @@ namespace LearningAngular
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/mentoring")
+               
+                 .IncludeDirectory("~/src/mentoring/dashboard", "*.js")
+                .IncludeDirectory("~/src/mentoring/infrastructure", "*.js")
+
+                  .IncludeDirectory("~/src/mentoring/mentors", "*.js")
+               .IncludeDirectory("~/src/mentoring/students", "*.js")
+                .Include("~/src/mentoring/app.module.js")
+
+                );
+
             bundles.Add(new ScriptBundle("~/bundles/greeter").Include(
                 "~/src/greeting/app.module.js").IncludeDirectory(
                 "~/src/greeting/controllers", "*.js").IncludeDirectory(
-                "~/src/greeting/services","*.js").IncludeDirectory(
+                "~/src/greeting/services", "*.js").IncludeDirectory(
                 "~/src/greeting/directives", "*.js")
                 );
 
